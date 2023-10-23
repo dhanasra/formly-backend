@@ -1,12 +1,23 @@
 service: formly-backend
 frameworkVersion: '3'
 
+plugins:
+  - serverless-offline
+
+custom:
+  serverless-offline:
+    httpPort: 4000
+
 provider:
   name: aws
   runtime: nodejs18.x
+  timeout: 30
 
 functions:
-  api:
-    handler: index.handler
+  auth:
+    handler: ./handlers/auth.handler
     events:
-      - httpApi: '*'
+      - http:
+          path: /ping
+          method: GET
+          cors: true
