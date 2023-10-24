@@ -1,5 +1,5 @@
 service: formly-backend
-# frameworkVersion: '3'
+frameworkVersion: '3'
 
 plugins:
   - serverless-offline
