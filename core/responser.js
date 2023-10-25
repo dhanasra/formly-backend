@@ -186,8 +186,6 @@ const generateResponse = (code) => {
 module.exports.success = (res, data, messageCode) => {
   const msg = generateResponse(messageCode);
 
-  console.log(res);
-
   res.status(200).send({
     "status": "success",
     "data": data,
